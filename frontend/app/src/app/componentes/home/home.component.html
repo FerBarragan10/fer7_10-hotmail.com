@@ -1,0 +1,26 @@
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Socio</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th><button class="btn btn-outline-success" (click)="nuevoCliente()">Nuevo</button></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <!--<th scope="row"></th>-->
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nombre| titlecase}}</td>
+            <td>{{cliente.apellido| titlecase}}</td>
+            <td>{{cliente.email}}</td>
+            <td><button class="btn btn-outline-warning" (click)=editarCliente(cliente)> Editar </button></td>
+            <td><button class="btn btn-outline-danger"(click)=eliminarCliente(cliente.id)> Eliminar </button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
